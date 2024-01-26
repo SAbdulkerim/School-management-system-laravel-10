@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->foreignId('class_id')->constrained('classes')->cascadeOnDelete();
-            $table->foreignId('department_id')->constrained('departments')->cascadeOnDelete();
+            $table->foreignId('department_id')->constrained('departments')->onDelete('no action');
             $table->string('name')->nullable();
             $table->string('image')->nullable();
             $table->string('details')->nullable();

@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('subject')->nullable();
             $table->string('slug')->nullable();
             $table->timestamps();
-            $table->foreign('class_id')->references('id')->on('classes')->onDelete('cascade');
-            $table->foreign('department_id')->references('id')->on('departments')->onDelete('cascade');
+            $table->foreign('class_id')->references('id')->on('classes')->onDelete('no action');
+            $table->foreign('department_id')->references('id')->on('departments');
         });
     }
 
